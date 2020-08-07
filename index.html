@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body  {
+            background-color:  #040404;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <script>
+
+        function showNews()
+        {
+            const newNews =  new Notification("How are you ? Let's buy new CyperPunk :D", {
+                body: "buy now ~!",
+                icon : "cp.png"
+            }); 
+            newNews.onclick = () => { 
+                window.location.href = "https://www.youtube.com/watch?v=mrZC1Jcv0dw";
+            }
+        }
+        console.log(Notification.permission ==="default" ? "we have" : "we have not");
+
+        Notification.requestPermission().then(permission=>{
+            permission === "granted" ? showNews() : false; 
+        });
+    </script>
+</body>
+</html>
